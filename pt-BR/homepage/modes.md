@@ -1,4 +1,4 @@
 ---
-title: Renderização NUXT<span class="text-nuxt-lightgreen">JS</span>
+title: renderização NUXT<span class="text-nuxt-lightgreen">JS</span> 
 ---
 
