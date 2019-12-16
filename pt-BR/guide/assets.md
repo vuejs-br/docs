@@ -43,12 +43,7 @@ Os benefícios do uso do file-loader e do url-loader são:
 - url-loader permite alinhar condicionalmente um arquivo como URL de dados da base 64 se eles forem menores que um determinado limite. Isso pode reduzir um número de solicitações HTTP para arquivos triviais. Se o arquivo for maior que o limite, ele retornará automaticamente ao carregador de arquivos.
 
 Na verdade, a configuração padrão dos carregadores de componentes do Nuxt.js é:
-<!-- The benefits of using file-loader and url-loader are:
 
-- file-loader lets you designate where to copy and place the asset file, and how to name it using version hashes for better caching.
-- url-loader allows you to conditionally inline a file as base-64 data URL if they are smaller than a given threshold. This can reduce a number of HTTP requests for trivial files. If the file is larger than the threshold, it automatically falls back to file-loader.
-
-Actually, Nuxt.js default assets loaders configuration is: -->
 
 ```js
 [

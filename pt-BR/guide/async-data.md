@@ -80,7 +80,7 @@ Você pode exibir os dados dentro do seu modelo como você está acostumado a fa
 </template>
 ```
 
-## O Contexto
+## O Context
 
 Para ver a lista de chaves disponíveis no `context`, dê uma olhada no [API Essential `context`](/api/context).
 

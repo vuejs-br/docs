@@ -1,27 +1,27 @@
 ---
 title: Plugins
-description: Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root Vue.js Application. This is especially helpful when using your own libraries or external modules.
+description: O Nuxt.js permite definir plugins JavaScript a serem executados antes de instanciar o aplicativo Vue.js raiz. Isso é especialmente útil ao usar suas próprias bibliotecas ou módulos externos.
 ---
 
-> Nuxt.js allows you to define JavaScript plugins to be run before instantiating the root vue.js application. This is especially helpful when using your own libraries or external modules.
+> O Nuxt.js permite definir plugins JavaScript a serem executados antes de instanciar o aplicativo raiz vue.js. Isso é especialmente útil ao usar suas próprias bibliotecas ou módulos externos.
 
 <div class="Alert">
 
-It is important to know that in any Vue [instance lifecycle](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), only `beforeCreate` and `created` hooks are called **both from client-side and server-side**. All other hooks are called only from the client-side.
+É importante saber que em qualquer Vue [ciclo de vida da instância](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram), apenas os ganchos `beforeCreate` e` created` são chamados **ambos de do lado do cliente e do lado do servidor**. Todos os outros ganchos são chamados apenas no lado do cliente.
 
 </div>
 
-## External Packages
+## Pacotes Externos
 
-We may want to use external packages/modules in our application, one great example is [axios](https://github.com/mzabriskie/axios) for making HTTP request for both server and client.
+Podemos usar pacotes/módulos externos em nossa aplicação, um ótimo exemplo é o [axios](https://github.com/mzabriskie/axios) para fazer solicitações HTTP para servidor e cliente.
 
-We install it via npm:
+Nós o instalamos via npm:
 
 ```bash
 npm install --save axios
 ```
 
-Then, we can use it directly in our pages:
+Em seguida, podemos usá-lo diretamente em nossas páginas:
 
 ```html
 <template>
@@ -40,7 +40,7 @@ export default {
 </script>
 ```
 
-But there is **one problem here**. If we import axios in another page, it will be included again for the page bundle. We want to include `axios` only once in our application. To do this, we use the `build.vendor` key in our `nuxt.config.js`:
+Mas há **um problema aqui**. Se importarmos axios em outra página, ela será incluída novamente no pacote de páginas. Queremos incluir `axios` apenas uma vez em nossa aplicação. Para fazer isso, usamos a chave `build.vendor` em nosso` nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -50,13 +50,12 @@ module.exports = {
 }
 ```
 
-Then, we can import `axios` anywhere without having to worry about making the bundle bigger!
+Então, podemos importar `axios` em qualquer lugar sem ter que se preocupar em aumentar o pacote!
 
 ## Vue Plugins
 
-If we want to use [vue-notifications](https://github.com/se-panfilov/vue-notifications) to display notification in our application, we need to setup the plugin before launching the app.
-
-File `plugins/vue-notifications.js`:
+Se quisermos usar [vue-Notifications](https://github.com/se-panfilov/vue-notifications) para exibir notificações em nosso aplicativo, precisamos configurar o plugin antes de iniciar o aplicação.
+Arquivo `plugins/vue-notifications.js`:
 
 ```js
 import Vue from 'vue'

@@ -1,59 +1,58 @@
 ---
-title: Installation
-description: Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
+title: Instalação
+description: Nuxt.js é realmente fácil de começar. Um projeto simples precisa apenas da dependência do `nuxt`.
 ---
 
-> Nuxt.js is really easy to get started with. A simple project only needs the `nuxt` dependency.
+> Nuxt.js é realmente fácil de começar. Um projeto simples precisa apenas da dependência do `nuxt`.
 
 <div>
   <a href="https://vueschool.io/courses/nuxtjs-fundamentals/?friend=nuxt" target="_blank" class="Promote">
     <img src="/nuxt-fundamentals.png" srcset="/nuxt-fundamentals-2x.png 2x" alt="Nuxt Fundamentals by vueschool"/>
     <div class="Promote__Content">
-      <h4 class="Promote__Content__Title">Nuxt.js Fundamentals</h4>
-      <p class="Promote__Content__Description">Learn how to get started quickly with Nuxt.js in videos.</p>
-      <p class="Promote__Content__Signature">Video courses made by VueSchool to support Nuxt.js developpement.</p>
+      <h4 class="Promote__Content__Title">Fundamentos do Nuxt.js</h4>
+      <p class="Promote__Content__Description">Aprenda a começar rapidamente com o Nuxt.js nos vídeos.</p>
+      <p class="Promote__Content__Signature">Vídeo aulas feitas pela VueSchool para apoiar o desenvolvimento do Nuxt.js.</p>
     </div>
   </a>
 </div>
 
-## Using Nuxt.js starter template
+## Usando o modelo inicial do Nuxt.js.
 
-To get started quickly, the Nuxt.js team has created a [starter template](https://github.com/nuxt-community/starter-template).
+Para começar rapidamente, a equipe do Nuxt.js criou um [modelo inicial](https://github.com/nuxt-community/starter-template).
 
-[Download the .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) starter template or install it with Vue CLI:
+[Download the .zip](https://github.com/nuxt-community/starter-template/archive/master.zip) modelo inicial ou instale-o com o Vue CLI:
 
 ```bash
 $ vue init nuxt-community/starter-template <project-name>
 ```
 
-> If [Vue CLI](https://github.com/vuejs/vue-cli) is not installed, please install it with `npm install -g @vue/cli @vue/cli-init`
+> Se [Vue CLI](https://github.com/vuejs/vue-cli) não estiver instalado, instale-o com `npm install -g @vue/cli @vue/cli-init`
 
-then install the dependencies:
+instale as dependências:
 
 ```bash
 $ cd <project-name>
 $ npm install
 ```
 
-and launch the project with:
+e inicie o projeto com:
 
 ```bash
 $ npm run dev
 ```
-
-The application is now running on http://localhost:3000.
+O aplicação agora está sendo executado em http://localhost:3000.
 
 <div class="Alert">
 
-Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+O Nuxt.js escutará as alterações do arquivo dentro do diretório <code> pages </code>, portanto, não há necessidade de reiniciar a aplicação ao adicionar novas páginas.
 
 </div>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Para descobrir mais sobre a estrutura de diretórios do projeto: [Documentação da estrutura de diretórios](/guide/directory-structure).
 
-## Starting from scratch
+## Começando do zero
 
-Creating a Nuxt.js application from scratch is also really easy, it only needs *1 file and 1 directory*. Let's create an empty directory to start working on the application:
+Criar um projeto Nuxt.js a partir do zero também é muito fácil, ele precisa apenas de *1 arquivo e 1 diretório*. Vamos criar um diretório vazio para começar a trabalhar no projeto:
 
 ```bash
 $ mkdir <project-name>
@@ -62,13 +61,13 @@ $ cd <project-name>
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info:</b> replace <code>&lt;project-name&gt;</nom-du-projet></code> by the name of the project.
+<b>Info:</b> substituir <code>&lt;project-name&gt;</nom-du-projet></code> pelo nome do projeto.
 
 </div>
 
-### The package.json
+###  package.json
 
-The project needs a `package.json` file to specify how to start `nuxt`:
+O projeto precisa de um arquivo `package.json` para especificar como iniciar o` nuxt`:
 
 ```json
 {
@@ -79,27 +78,27 @@ The project needs a `package.json` file to specify how to start `nuxt`:
 }
 ```
 
-`scripts` will launch Nuxt.js via `npm run dev`.
+`scripts` iniciará o Nuxt.js através do` npm run dev`.
 
-### Installing `nuxt`
+### Instalando o `nuxt`
 
-Once the `package.json` has been created, add `nuxt` to the project via npm:
+Depois que o `package.json` for criado, adicione` nuxt` ao projeto via npm:
 
 ```bash
 $ npm install --save nuxt
 ```
 
-### The `pages` directory
+### O diretório `pages`
 
-Nuxt.js will transform every `*.vue` file inside the `pages` directory as a route for the application.
+O Nuxt.js transformará todos os arquivos `* .vue` dentro do diretório` pages` como uma rota para a aplicação.
 
-Create the `pages` directory:
+Crie o diretório `pages`:
 
 ```bash
 $ mkdir pages
 ```
 
-then create the first page in `pages/index.vue`:
+então crie a primeira página em `pages/index.vue`:
 
 ```html
 <template>
@@ -107,18 +106,18 @@ then create the first page in `pages/index.vue`:
 </template>
 ```
 
-and launch the project with:
+e inicie o projeto com:
 
 ```bash
 $ npm run dev
 ```
 
-The application is now running on http://localhost:3000.
+O aplicativo agora está sendo executado emhttp://localhost:3000.
 
 <div class="Alert">
 
-Nuxt.js will listen for file changes inside the <code>pages</code> directory, so there is no need to restart the application when adding new pages.
+O Nuxt.js escutará as alterações do arquivo dentro do diretório <code> pages </code>, portanto, não há necessidade de reiniciar o aplicativo ao adicionar novas páginas.
 
 </div>
 
-To discover more about the directory structure of the project: [Directory Structure Documentation](/guide/directory-structure).
+Para descobrir mais sobre a estrutura de diretórios do projeto: [Documentação da estrutura de diretórios](/guide/directory-structure).

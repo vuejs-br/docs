@@ -1,84 +1,83 @@
 ---
-title: Configuration
-description: By default, Nuxt.js is configured to cover most use cases. This default configuration can be overwritten by using the `nuxt.config.js` file.
+title: Configuração
+description: Por padrão, o Nuxt.js está configurado para cobrir a maioria dos casos de uso. Esta configuração padrão pode ser substituída usando o arquivo `nuxt.config.js`.
 ---
 
-> By default, Nuxt.js is configured to cover most use cases. This default configuration can be overwritten by modifying the `nuxt.config.js` file.
+> Por padrão, o Nuxt.js está configurado para cobrir a maioria dos casos de uso. Esta configuração padrão pode ser substituída modificando o arquivo `nuxt.config.js`.
 
 ### build
 
-This option lets you add modules inside the `vendor.bundle.js` file to reduce the size of the application bundle. This is especially helpful when using external modules.
-
-[Documentation about `build` integration](/api/configuration-build)
+Esta opção permite adicionar módulos dentro do arquivo `vendor.bundle.js` para reduzir o tamanho do pacote de aplicativos. Isso é especialmente útil ao usar módulos externos.
+[Documentação sobre integração de `build`](/api/configuration-build)
 
 ### css
 
-This option lets you define the CSS files/modules/libraries you want to set as globals (included in every page).
+Esta opção permite definir os arquivos / módulos / bibliotecas CSS que você deseja definir como globais (incluídos em todas as páginas).
 
-[Documentation about `css` integration](/api/configuration-css)
+[Documentação sobre integração de `css`](/api/configuration-css)
 
 ### dev
 
-This option lets you define the `development` or `production` mode of Nuxt.js
+Esta opção permite definir o modo `development` ou` production` do Nuxt.js
 
-[Documentation about `dev` integration](/api/configuration-dev)
+[Documentação sobre integração de `dev`](/api/configuration-dev)
 
 ### env
 
-This option lets you define environment variables available both the client and the server.
+Esta opção permite definir variáveis ​​de ambiente disponíveis, tanto o cliente quanto o servidor.
 
-[Documentation about `env` integration](/api/configuration-env)
+[Documentação sobre integração `env`](/api/configuration-env)
 
 ### generate
 
-This option lets you to define parameters values for every dynamic route in your application that will be transformed into HTML files by Nuxt.js.
+Esta opção permite definir valores de parâmetros para cada rota dinâmica em sua aplicação que será transformada em arquivos HTML pelo Nuxt.js.
 
-[Documentation about generate integration](/api/configuration-generate)
+[Documentação sobre gerar integração](/api/configuration-generate)
 
 ### head
 
-This option lets you to define all default meta tags for your application.
+Essa opção permite definir todas as metatags padrão para sua aplicação.
 
-[Documentation about head integration](/api/configuration-head)
+[Documentação sobre integração de heads](/api/configuration-head)
 
 ### loading
 
-This option lets you to customize the loading component Nuxt.js loads by default.
+Essa opção permite personalizar o componente de carregamento que o Nuxt.js carrega por padrão.
 
-[Documentation about `loading` integration](/api/configuration-loading)
+[Documentação sobre integração de `loading`](/api/configuration-loading)
 
 ### modules
 
-This option lets you add Nuxt modules to your project.
+Esta opção permite adicionar módulos Nuxt ao seu projeto.
 
-[Documentation about `modules` integration](/api/configuration-modules)
+[Documentação sobre integração de `modules`](/api/configuration-modules)
 
 ### plugins
 
-This option lets you to define JavaScript plugins to be run before instantiating the root Vue.js Application.
+Esta opção permite definir plugins JavaScript para serem executados antes de instanciar o Vue.js raiz.
 
-[Documentation about `plugins` integration](/api/configuration-plugins)
+[Documentação sobre integração de `plugins`](/api/configuration-plugins)
 
 ### rootDir
 
-This option lets you define the workspace of your Nuxt.js Application.
+Esta opção permite definir o espaço de trabalho do Nuxt.js.
 
-[Documentation about `rootDir` integration](/api/configuration-rootdir)
+[Documentação sobre integração com `rootDir`](/api/configuration-rootdir)
 
 ### router
 
-This option lets you overwrite the default Nuxt.js configuration of Vue Router.
+Esta opção permite substituir a configuração padrão do Nuxt.js. do Vue Router.
 
-[Documentation about `router` integration](/api/configuration-router)
+[Documentação sobre integração de `router`](/api/configuration-router)
 
 ### srcDir
 
-This option lets you define the source directory of your Nuxt.js Application.
+Esta opção permite definir o diretório de origem do seu aplicativo Nuxt.js.
 
-[Documentation about `srcDir` integration](/api/configuration-srcdir)
+[Documentação sobre integração de srcDir](/api/configuration-srcdir)
 
 ### transition
 
-This option lets you define the default properties of the page transitions.
+Esta opção permite definir as propriedades padrão das transições de página.
 
-[Documentation about `transition` integration](/api/configuration-transition)
+[Documentação sobre integração de `transition`](/api/configuration-transition)

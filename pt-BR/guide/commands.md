@@ -1,29 +1,30 @@
 ---
-title: Commands and Deployment
-description: Nuxt.js comes with a set of useful commands, both for development and production purpose.
+title: Comandos e implantação
+description: O Nuxt.js vem com um conjunto de comandos úteis, tanto para fins de desenvolvimento quanto de produção.
 ---
 
-> Nuxt.js comes with a set of useful commands, both for development and production purpose.
+> O Nuxt.js vem com um conjunto de comandos úteis, tanto para fins de desenvolvimento quanto de produção.
 
-## List of Commands
+## Lista de Comandos
 
-| Command         | Description                                                                              |
+| Comando         | Descrição                                                                            |
 |-----------------|------------------------------------------------------------------------------------------|
-| nuxt            | Launch a development server on localhost:3000 with hot-reloading.                        |
-| nuxt build      | Build your application with webpack and minify the JS & CSS (for production).            |
-| nuxt start      | Start the server in production mode (after running `nuxt build`).                        |
-| nuxt generate   | Build the application and generate every route as a HTML file (used for static hosting). |
+| nuxt            | Inicia o servidor de desenvolvimento no localhost:3000 hot-reloading.                        |
+| nuxt build      | Crie sua aplicaçãoBuild com o webpack e reduza o JS & CSS (para produção).           |
+| nuxt start      | Inicie o servidor no modo de produção (depois de executar o `nuxt build`).                        |
+| nuxt generate   | Crie a aplicação e gere todas as rotas como um arquivo HTML (usado para hospedagem estática). |
 
-#### Arguments
+#### Argumentos
 
-You can use `--help` with any command to get detailed usage. Common arguments are:
+Você pode usar `--help` com qualquer comando para obter um uso detalhado. Os argumentos comuns são:
+- **`--config-file` ou` -c`: ** especifique o caminho para o arquivo `nuxt.config.js`.
+- ** `--spa` ou` -s`: ** Executa o comando no modo SPA, desativando a renderização no servidor.
+- **`--config-file` or `-c`:** especifique o caminho para o arquivo `nuxt.config.js` .
+- **`--spa` or `-s`:** Executa o comando no modo SPA, desativando a renderização no servidor.
 
-- **`--config-file` or `-c`:** specify the path to `nuxt.config.js` file.
-- **`--spa` or `-s`:** Runs command in SPA mode by disabling server side rendering.
+#### Usando o package.json
 
-#### Using in package.json
-
-You should put these commands in the `package.json`:
+Você deve colocar esses comandos no `package.json`:
 
 ```json
 "scripts": {
@@ -34,38 +35,35 @@ You should put these commands in the `package.json`:
 }
 ```
 
-Then, you can launch your commands via `npm run <command>` (example: `npm run dev`).
+Em seguida, você pode iniciar seus comandos via`npm run <command>` (exemplo: `npm run dev`).
 
 <div class="Alert Alert--nuxt-green">
-
-<b>Pro tip:</b> to pass arguments to npm commands, you need an extra <code>--</code> script name (example: <code>npm run dev -- --spa</code>).
+<b> Dica profissional: </b> para passar argumentos para os comandos npm, você precisa de um <code> -- </code> nome de script extra (exemplo: <code> npm run dev -- --spa </code>)
 
 </div>
 
-## Development Environment
+## Ambiente de desenvolvimento
 
-To launch Nuxt in development mode with hot reloading:
+Para iniciar o Nuxt no modo de desenvolvimento com recarga a quente:
 
 ```bash
 nuxt
-// OR
+// OU
 npm run dev
 ```
 
-## Production Deployment
+## Implantação de produção
+O Nuxt.js permite que você escolha entre três modos de implantar seu aplicativo: servidor renderizado, SPA ou estático gerado.
 
-Nuxt.js lets your choose between three modes to deploy your application: Server Rendered, SPA or Static Generated.
-
-### Server Rendered Deployment (Universal)
-
-To deploy, instead of running `nuxt`, you probably want to build ahead of time. Therefore, building and starting are separate commands:
+### Implantação renderizada pelo servidor (Universal)
+Para implantar, em vez de executar o `nuxt`, você provavelmente deseja construir com antecedência. Portanto, construir e iniciar são comandos separados:
 
 ```bash
 nuxt build
 nuxt start
 ```
 
-The `package.json` like follows is recommended:
+O `package.json` como a seguir é recomendado:
 
 ```json
 {
@@ -81,44 +79,44 @@ The `package.json` like follows is recommended:
 }
 ```
 
-Note: we recommend putting `.nuxt` in `.npmignore` or `.gitignore`.
+Nota: recomendamos colocar `.nuxt` em` .npmignore` ou `.gitignore`.
 
-### Static Generated Deployment (Pre Rendered)
+### Implantação gerada estática (pré-renderizada)
 
-Nuxt.js gives you the ability to host your web application on any static hosting.
+O Nuxt.js oferece a capacidade de hospedar sua Aplicação Web em qualquer hospedagem estática.
 
-To generate our web application into static files:
+Para gerar sua aplicação web em arquivos estáticos:
 
 ```bash
 npm run generate
 ```
 
-It will create a `dist` folder with everything inside ready to be deployed on a static hosting site.
+Ele criará uma pasta `dist` com tudo pronto para ser implantado em um site estático de hospedagem.
 
-If you have a project with [dynamic routes](/guide/routing#dynamic-routes), take a look at the [generate configuration](/api/configuration-generate) to tell Nuxt.js how to generate these dynamic routes.
+Se você tem um projeto com [rotas dinâmicas](/guide/routing#dynamic-routes), dê uma olhada em[generate configuration](/api/configuration-generate) para informar o Nuxt.js como gerar essas rotas dinâmicas.
 
 <div class="Alert">
 
-When generating your web application with `nuxt generate`, [the context](/api/context) given to [data()](/guide/async-data#the-data-method) and [fetch()](/guide/vuex-store#the-fetch-method) will not have `req` and `res`.
+Ao gerar sua aplicação com `nuxt generate`, [the context](/api/context) dado a [data()](/guide/async-data#the-data-method) e [fetch()](/guide/vuex-store#the-fetch-method) não terá `req` e `res`.
 
 </div>
 
-### Single Page Application Deployment (SPA)
+### Desenvolimento de Single Page Application (SPA)
 
-`nuxt generate` still needs SSR engine during build/generate time while having the advantage of having all our pages pre rendered, and have a high SEO and page load score. The content is generated at *build time*. For example, we can't use it for applications where content depends on user authentication or a real time API (at least for the first load).
+O `nuxt generate` ainda precisa do mecanismo SSR durante o tempo de criação, além de ter a vantagem de ter todas as nossas páginas pré renderizadas e ter uma alta pontuação de SEO e de carregamento da página. O conteúdo é gerado no *build time*. Por exemplo, não podemos usá-lo para aplicações em que o conteúdo depende da autenticação do usuário ou de uma API em tempo real (pelo menos para o primeiro carregamento).
 
-The SPA idea is simple! When SPA mode is enabled using `mode: 'spa'` or `--spa` flag, and we run build, generation automatically starts after the build. This generation contains common meta and resource links, but not page content.
+A ideia do SPA é simples! Quando o modo SPA é ativado usando o sinalizador `mode: 'spa'` ou` --spa`, e executamos a compilação,a criação inicia automaticamente após a compilação. Essa geração contém links comuns de meta e recurso, mas não o conteúdo da página.
 
-So, for an SPA deployment, you must do the following:
+Portanto, para uma implantação de SPA, você deve fazer o seguinte:
 
- - Change `mode` in `nuxt.config.js` to `spa`.
- - Run `npm run build`.
- - Deploy the created `dist/` folder to your static hosting like Surge, GitHub Pages or nginx.
+- Altere `mode` em` nuxt.config.js` para `spa`.
+- Execute o `npm run build`.
+- Implante a pasta `dist /` criada na sua hospedagem estática, como Surge, GitHub Pages ou nginx.
 
-Another possible deployment method is to use Nuxt as a middleware in frameworks while in `spa` mode. This helps reduce server load and uses Nuxt in projects where SSR is not possible.
+Outro método de implantação possível é usar o Nuxt como um middleware em estruturas enquanto estiver no modo `spa`. Isso ajuda a reduzir a carga do servidor e usa o Nuxt em projetos onde o SSR não é possível.
 
 <div class="Alert">
 
-See [How to deploy on Heroku?](/faq/heroku-deployment) for examples of deployment to popular hosts.
+Veja [Como implantar no Heroku?](/faq/heroku-deployment) para exemplos de implantação em hosts populares.
 
 </div>

@@ -1,19 +1,19 @@
 ---
-title: Contribution Guide
-description: Any contribution to Nuxt.js is more than welcome!
+title: Guia de Contribuição
+description: Qualquer contribuição para o Nuxt.js é mais que bem-vinda!
 ---
 
-> Any contribution to Nuxt.js is more than welcome!
+> Qualquer contribuição para o Nuxt.js é mais que bem-vinda!
 
-## Reporting Issues
+## Relatando problemas
 
-A great way to contribute to the project is to send a detailed report when you encounter an issue. We always appreciate a well-written bug report, and will thank you for it! Before reporting an issue, please read carefully the documentation and search if any issue for your problem doesn't already exist: https://github.com/nuxt/nuxt.js/issues
+Uma ótima maneira de contribuir para o projeto é enviar um relatório detalhado quando você encontrar um problema. Sempre apreciamos um relatório de erros bem escrito e agradecemos por isso! Antes de relatar um problema, leia atentamente a documentação e procure se já existe alguma solução para o seu problema: https://github.com/nuxt/nuxt.js/issues
 
 ## Pull Requests
 
-We'd love to see your pull requests, even if it's just to fix a typo. Any significant improvement should be documented as [a GitHub issue](https://github.com/nuxt/nuxt.js/issues) before anybody starts working on it.
+Gostaríamos muito de ver suas solicitações de recebimento, mesmo que seja apenas para corrigir um erro de digitação. Qualquer melhoria significativa deve ser documentada como [um GitHub issue](https://github.com/nuxt/nuxt.js/issues)antes que alguém comece a trabalhar nele.
 
-### Convention
+### Convenção
+- Para uma correção, o nome da ramificação deve ser `fix-XXX` onde XXX é o número do problema ou o nome da correção.
+- Para um recurso, o nome do ramo deve ser `feature-XXX` onde XXX é o número do problema associado a essa solicitação de recurso
 
-- For a fix, the branch name should be `fix-XXX` where XXX is the issue number or the name of what your fix does
-- For a feature, the branch name should be `feature-XXX` where XXX is the issue number associated to this feature request

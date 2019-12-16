@@ -1,31 +1,30 @@
 ---
-title: Modules
-description: Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
+title: Módulos
+description: Módulos são extensões do Nuxt.js que podem ampliar sua funcionalidade principal e adicionar integrações infinitas.
 ---
 
-> Modules are Nuxt.js extensions which can extend it's core functionality and add endless integrations.
+> Módulos são extensões do Nuxt.js que podem ampliar sua funcionalidade principal e adicionar integrações infinitas.
 
-## Introduction
+## Introdução
 
-While developing production-grade applications with Nuxt, you soon discover that the framework's core functionality is not enough. Nuxt can be extended with configuration options and plugins, but maintaining these customizations across multiple projects is tedious, repetitive and time-consuming. On the other hand, supporting every project's needs out of the box would make Nuxt very complex and hard to use.
+Ao desenvolver aplicações de nível de produção com o Nuxt, você logo descobre que a principal funcionalidade da estrutura não é suficiente. O Nuxt pode ser estendido com opções de configuração e plugins, mas manter essas personalizações em vários projetos é entediante, repetitivo e demorado. Por outro lado, dar suporte imediato às necessidades de todos os projetos tornaria o Nuxt muito complexo e difícil de usar.
 
-This is why Nuxt provides a higher-order module system that makes it easy to extend the core. Modules are simply **functions** that are called sequentially when booting Nuxt. The framework waits for each module to finish before continuing. In this way, modules can customize almost any aspect of Nuxt. Thanks to Nuxt's modular design (based on webpack's [Tapable](https://github.com/webpack/tapable)), modules can easily register hooks for certain entry points like builder initialization. Modules can also override templates, configure webpack loaders, add CSS libraries, and perform any of a number of other useful tasks.
+É por isso que o Nuxt fornece um sistema de módulo de ordem superior que facilita a extensão do núcleo. Módulos são simplesmente **funções** que são chamadas sequêncialmente ao inicializar o Nuxt. A estrutura aguarda a conclusão de cada módulo antes de continuar. Dessa forma, os módulos podem personalizar praticamente qualquer aspecto do Nuxt. Graças ao design modular do Nuxt (baseado no webpack do [Tapable](https://github.com/webpack/tapable)), os módulos podem registrar facilmente ganchos para determinados pontos de entrada, como a inicialização do construtor. Os módulos também podem substituir modelos, configurar carregadores de webpack, adicionar bibliotecas CSS e executar várias outras tarefas úteis.
 
-Best of all, Nuxt modules can be incorporated into npm packages. This makes them easy to reuse across projects and to share with the Nuxt community, helping create an ecosystem of high-quality Nuxt add-ons.
+O melhor de tudo é que os módulos Nuxt podem ser incorporados aos pacotes npm. Isso facilita a reutilização em projetos e o compartilhamento com a comunidade Nuxt, ajudando a criar um ecossistema de complementos Nuxt de alta qualidade.
 
-Modules are great if you:
+Os módulos são ótimos se você:
 
-- Are a member of an **agile team** that needs to quickly bootstrap new projects.
-- Are tired of **re-inventing** the wheel for common tasks like integrating Google Analytics.
-- Are a lovely **Open Source** enthusiast who would like to easily **share** your work with the community.
-- Are a member of an **enterprise** company that values **quality** and **reusability**.
-- Are often up against short deadlines and don't have time to dig into the details of every new library or integration.
-- Are tired of dealing with breaking changes to low-level interfaces, and need things that **just work™**.
+- É membro de uma **equipe ágil** que precisa iniciar rapidamente novos projetos.
+- Está cansado de **inventar moda** para tarefas comuns como a integração do Google Analytics.
+- É um adorável entusiasta do **open source** que gostaria de compartilhar facilmente seu trabalho com a comunidade.
+- É membro de uma **empresa** que valoriza **qualidade** e **reutilização**.
+- Frequentemente enfrentamprazos curtos e não têm tempo para se aprofundar nos detalhes de cada nova biblioteca ou integração.
+- Está cansado de lidar com as mudanças recentes nas interfaces de baixo nível e precisa de coisas que **simplesmente funcionem**.
 
-## Write a basic Module
+## Escreva um módulo básico
 
-As already mentioned modules are just simple functions. They can be packaged as npm modules or directly included in project source code.
-
+Como os módulos já mencionados, são apenas funções simples. Eles podem ser empacotados como módulos npm ou incluídos diretamente no código-fonte do projeto.
 **modules/simple.js**
 
 ```js
@@ -39,23 +38,22 @@ module.exports = function SimpleModule (moduleOptions) {
 
 **`moduleOptions`**
 
-This is the object passed using `modules` array by user we can use it to customize it's behavior.
+Este é o objeto passado usando o array `modules` pelo usuário, podemos usá-lo para personalizar seu comportamento.
 
 **`this.options`**
 
-You can directly access to Nuxt options using this reference. This is `nuxt.config.js` with all default options assigned to and can be used for shared options between modules.
+Você pode acessar diretamente as opções do Nuxt usando esta referência. Este é o `nuxt.config.js` com todas as opções padrão atribuídas e podem ser usadas para opções compartilhadas entre os módulos.
 
 **`this.nuxt`**
 
-This is a reference to current Nuxt instance. Refer to [Nuxt class docs for available methods](/api/internals-nuxt).
+Esta é uma referência à instância atual do Nuxt. Referir-se[Documentos da classe Nuxt para métodos disponíveis](/api/internals-nuxt).
 
 **`this`**
-
-Context of modules. Refer to [ModuleContainer](/api/internals-module-container) class docs for available methods.
+Contexto dos módulos. Consulte os documentos da classe [ModuleContainer](/api/internals-module-container) para obter os métodos disponíveis.
 
 **`module.exports.meta`**
 
-This line is **required** if you are publishing module as an npm package. Nuxt internally uses meta to work better with your package.
+Essa linha é **necessária** se você estiver publicando o módulo como um pacote npm. O Nuxt usa internamente o meta para funcionar melhor com seu pacote.
 
 **nuxt.config.js**
 
@@ -71,17 +69,17 @@ module.exports = {
 }
 ```
 
-We then tell Nuxt to load some specific modules for a project with optional parameters as options. Please refer to [modules configuration](/api/configuration-modules) docs for more info!
+Em seguida, dizemos ao Nuxt para carregar alguns módulos específicos para um projeto com parâmetros opcionais como opções. Por favor, consulte a documentação [modules configuration](/api/configuration-modules) para obter mais informações!
 
-## Async Modules
+## Módulos assíncronos
 
-Not all modules will do everything synchronous. For example you may want to develop a module which needs fetching some API or doing async IO. For this, Nuxt supports async modules which can return a Promise or call a callback.
+Nem todos os módulos farão tudo de forma síncrona. Por exemplo, você pode desenvolver um módulo que precise buscar alguma API ou executar E/S assíncrona. Para isso, o Nuxt suporta módulos assíncronos que podem retornar uma promessa ou chamar um retorno de chamada.
 
-### Use async/await
+### Usando async/await
 
 <div class="Alert Alert--orange">
 
-Be aware that `async`/`await` is only supported in Node.js > 7.2. So if you are a module developer at least warn users about that if using them. For heavily async modules or better legacy support you can use either a bundler to transform it for older Node.js comparability or using promise method.
+Esteja ciente de que `async`/`await` é suportado apenas no Node.js.> 7.2. Portanto, se você é um desenvolvedor de módulos, pelo menos avise os usuários sobre isso se os estiver usando. Para módulos altamente assíncronos ou melhor suporte a legados, você pode usar um bundler para transformá-lo para uma comparação mais antiga do Node.js. ou usando o método promise.
 
 </div>
 
@@ -94,7 +92,7 @@ module.exports = async function asyncModule () {
 }
 ```
 
-### Return a Promise
+### Retornando um Promise
 
 ```js
 const axios = require('axios')
@@ -108,7 +106,7 @@ module.exports = function asyncModule () {
 }
 ```
 
-### Use callbacks
+### Usando callbacks
 
 ```js
 const axios = require('axios')
@@ -123,11 +121,11 @@ module.exports = function asyncModule (callback) {
 ```
 
 
-## Common Snippets
+## Snippets comuns
 
-### Top level options
+### Opções de nível superior
 
-Sometimes it is more convenient if we can use top level options while register modules in `nuxt.config.js`. So we can combine multiply option sources.
+Às vezes é mais conveniente se podemos usar as opções de nível superior enquanto registramos os módulos no `nuxt.config.js`. Assim, podemos combinar fontes de opções de multiplicação.
 
 **nuxt.config.js**
 
@@ -154,9 +152,9 @@ module.exports = function (moduleOptions) {
 }
 ```
 
-### Provide plugins
+### Fornecer plugins
 
-It is common that modules provide one or more plugins when added. For example [bootstrap-vue](https://bootstrap-vue.js.org) module would require to register itself into Vue. For this we can use `this.addPlugin` helper.
+É comum que os módulos forneçam um ou mais plugins quando adicionados. Por exemplo, o módulo [bootstrap-vue](https://bootstrap-vue.js.org) exigiria o registro no Vue. Para isso, podemos usar o auxiliar `this.addPlugin`.
 
 **plugin.js**
 
@@ -178,9 +176,9 @@ module.exports = function nuxtBootstrapVue (moduleOptions) {
 }
 ```
 
-### Template plugins
+### Plugins de templates
 
-Registered templates and plugins can leverage [lodash templates](https://lodash.com/docs/4.17.4#template) to conditionally change registered plugins output.
+Templates e plugins registrados podem aproveitar os [templates de lodash](https://lodash.com/docs/4.17.4#template) para alterar condicionalmente a saída de plugins registrados.
 
 **plugin.js**
 
@@ -213,9 +211,9 @@ module.exports = function nuxtBootstrapVue (moduleOptions) {
 }
 ```
 
-### Add a CSS library
+### Adicionar uma biblioteca CSS
 
-It is recommended checking if user already not provided same library to avoid adding duplicates. Also always consider having **an option to disable** adding css files by module.
+É recomendável verificar se o usuário já não forneceu a mesma biblioteca para evitar a adição de duplicatas. Também sempre considere ter **uma opção para desativar** adicionar arquivos css por módulo.
 
 **module.js**
 
@@ -228,9 +226,9 @@ module.exports = function (moduleOptions) {
 }
 ```
 
-### Emit assets
+### Emitir assets
 
-We can register webpack plugins to emit assets during build.
+Podemos registrar plugins do webpack para emitir ativos durante a compilação.
 
 **module.js**
 
@@ -252,9 +250,9 @@ module.exports = function (moduleOptions) {
 }
 ```
 
-### Register custom loaders
+### Registrar loaders personalizados
 
-We can do the same as `build.extend` in `nuxt.config.js` using `this.extendBuild`.
+Podemos fazer o mesmo que `build.extend` em` nuxt.config.js` usando `this.extendBuild`.
 
 **module.js**
 
@@ -275,9 +273,9 @@ module.exports = function (moduleOptions) {
 }
 ```
 
-## Run Tasks on Specific hooks
+## Executar tarefas em ganchos específicos
 
-Your module may need to do things only on specific conditions not just during Nuxt initialization. We can use powerful [Tapable](https://github.com/webpack/tapable) plugin system to do tasks on specific events. Nuxt will await for us if hooks return a Promise or are defined as `async`.
+Seu módulo pode precisar fazer as coisas apenas em condições específicas, não apenas durante a inicialização do Nuxt. Podemos usar o poderoso sistema de plugins [Tapable](https://github.com/webpack/tapable) para executar tarefas em eventos específicos. O Nuxt nos aguardará se os ganchos retornarem uma promessa ou forem definidos como `assíncronos`.
 
 ```js
 module.exports = function () {
@@ -310,6 +308,6 @@ module.exports = function () {
 
 <div class="Alert">
 
-There are many many more hooks and possibilities for modules. Please refer to [Nuxt Internals](/api/internals) to learn more about Nuxt internal API.
+Existem muitos outros ganchos e possibilidades para módulos. Por favor, consulte [Nuxt Internals](/api/internals) para saber mais sobre a API interna do Nuxt.
 
 </div>
