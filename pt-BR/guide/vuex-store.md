@@ -1,26 +1,27 @@
 ---
 title: Vuex Store
-description: Using a store to manage the state is important for every big application, that's why Nuxt.js implements Vuex in its core.
+description: Usar uma store para gerenciar o estado é importante para todos os grandes aplicativos; é por isso que o Nuxt.js implementa o Vuex em seu núcleo.
 ---
 
-> Using a store to manage the state is important to every big application, that's why nuxt.js implement [Vuex](https://vuex.vuejs.org/en/) in its core.
+> O uso de uma store para gerenciar o estado é importante para todos os grandes aplicativos; é por isso que o nuxt.js implementa o [Vuex] (https://vuex.vuejs.org/en/) em seu núcleo.
 
-## Activate the Store
+## Ativar a Store
 
-Nuxt.js will look for the `store` directory, if it exists, it will:
+O Nuxt.js procurará o diretório `store`, se existir, irá:
 
-1. Import Vuex,
-2. Add `vuex` module in the vendors bundle,
-3. Add the `store` option to the root Vue instance.
+1. Importar o Vuex,
+2. Adicione o módulo `vuex` ao pacote de fornecedores,
+3. Adicione a opção `store` à instância raiz do Vue.
 
-Nuxt.js lets you have **2 modes of store**, choose the one you prefer:
 
-- **Classic:** `store/index.js` returns a store instance.
-- **Modules:** every `.js` file inside the `store` directory is transformed as a [namespaced module](http://vuex.vuejs.org/en/modules.html) (`index` being the root module).
+O Nuxt.js permite que você tenha **2 modos de store**, escolha o que preferir:
 
-## Classic mode
+- **Clássico:** `store / index.js` retorna uma instância da loja.
+- **Módulos:** todo arquivo `.js` dentro do diretório` store` é transformado como um [módulo namespaced](http://vuex.vuejs.org/en/modules.html) (`index` sendo a raiz módulo).
 
-To activate the store with the classic mode, we create the `store/index.js` file which should export a method which returns a Vuex instance:
+## Modo clássico
+
+Para ativar a store no modo clássico, criamos o arquivo `store / index.js` que deve exportar um método que retorna uma instância do Vuex:
 
 ```js
 import Vuex from 'vuex'
@@ -41,9 +42,9 @@ const createStore = () => {
 export default createStore
 ```
 
-> We don't need to install `vuex` since it's shipped with Nuxt.js.
+> Não precisamos instalar o `vuex`, pois ele é enviado com o Nuxt.js.
 
-We can now use `this.$store` inside our components:
+Agora podemos usar `this. $store` dentro de nossos componentes:
 
 ```html
 <template>
@@ -51,11 +52,11 @@ We can now use `this.$store` inside our components:
 </template>
 ```
 
-## Modules mode
+## Modo módulos
 
-> Nuxt.js lets you have a `store` directory with every file corresponding to a module.
+> O Nuxt.js permite que você tenha um diretório `store` com todos os arquivos correspondentes a um módulo.
 
-If you want this option, export the state as a function, and the mutations and actions as objects in `store/index.js` instead of a store instance:
+Se você quiser esta opção, exporte o estado como uma função e as mutações e ações como objetos em `store / index.js` em vez de uma instância da store:
 
 ```js
 export const state = () => ({
@@ -69,7 +70,7 @@ export const mutations = {
 }
 ```
 
-Then, you can have a `store/todos.js` file:
+Então, você pode ter um arquivo `store / todos.js`:
 
 ```js
 export const state = () => ({
@@ -92,7 +93,7 @@ export const mutations = {
 }
 ```
 
-The store will be as such:
+A store será assim:
 
 ```js
 new Vuex.Store({
@@ -126,7 +127,7 @@ new Vuex.Store({
 })
 ```
 
-And in your `pages/todos.vue`, using the `todos` module:
+E no seu `pages / todos.vue`, usando o módulo` todos`:
 
 ```html
 <template>
@@ -135,7 +136,7 @@ And in your `pages/todos.vue`, using the `todos` module:
       <input type="checkbox" :checked="todo.done" @change="toggle(todo)">
       <span :class="{ done: todo.done }">{{ todo.text }}</span>
     </li>
-    <li><input placeholder="What needs to be done?" @keyup.enter="addTodo"></li>
+    <li><input placeholder="O que precisa ser feito?" @keyup.enter="addTodo"></li>
   </ul>
 </template>
 
@@ -167,13 +168,13 @@ export default {
 
 <div class="Alert">
 
-You can also have modules by exporting a store instance, you will have to add them manually on your store.
+Você também pode ter módulos exportando uma instância da store, precisará adicioná-los manualmente em sua store.
 
 </div>
 
 ### Plugins
 
-You can add additional plugin to the store (in Modules Mode) putting it into the `store/index.js` file:
+Você pode adicionar plugins adicionais à store (no Modo de módulos), colocando-o no arquivo `store/index.js`:
 
 ```js
 import myPlugin from 'myPlugin'
@@ -191,19 +192,19 @@ export const mutations = {
 }
 ```
 
-More information about the plugins: [Vuex documentation](https://vuex.vuejs.org/en/plugins.html).
+Mais informações sobre os plugins: [documentação da Vuex](https://vuex.vuejs.org/en/plugins.html).
 
-## The fetch Method
+## O método de busca
 
-> The `fetch` method is used to fill the store before rendering the page, it's like the `data` method except it doesn't set the component data.
+> O método `fetch` é usado para preencher a loja antes de renderizar a página, é como o método `data`, exceto que não define os dados do componente.
 
-More information about the fetch method: [API Pages fetch](/api/pages-fetch).
+Mais informações sobre o método de busca: [Busca de páginas da API](/api/pages-fetch).
 
-## The nuxtServerInit Action
+## A ação nuxtServerInit
 
-If the action `nuxtServerInit` is defined in the store, Nuxt.js will call it with the context (only from the server-side). It's useful when we have some data on the server we want to give directly to the client-side.
+Se a ação `nuxtServerInit` for definida na store, o Nuxt.js a chamará com o contexto (somente no lado do servidor). É útil quando temos alguns dados no servidor que queremos fornecer diretamente ao lado do cliente.
 
-For example, let's say we have sessions on the server-side and we can access the connected user through `req.session.user`. To give the authenticated user to our store, we update our `store/index.js` to the following:
+Por exemplo, digamos que temos sessões no lado do servidor e podemos acessar o usuário conectado através de `req.session.user`. Para dar o usuário autenticado à nossa loja, atualizamos nosso `store/index.js` para o seguinte:
 
 ```js
 actions: {
@@ -215,8 +216,8 @@ actions: {
 }
 ```
 
-> If you are using the _Modules_ mode of the Vuex store, only the primary module (in `store/index.js`) will receive this action. You'll need to chain your module actions from there.
+> Se você estiver usando o modo _Modules_ da store Vuex, somente o módulo principal (em `store/index.js`) receberá esta ação. Você precisará encadear suas ações do módulo a partir daí.
 
-The context is given to `nuxtServerInit` as the 2nd argument, it is the same as the `data` or `fetch` method except that `context.redirect()` and `context.error()` are omitted.
+O contexto (context) é dado ao `nuxtServerInit` como o segundo argumento, é o mesmo que o método` data` ou `fetch`, exceto pelo fato de que` context.redirect () ` e `context.error ()` são omitidos.
 
-> Note: Asynchronous `nuxtServerInit` actions must return a Promise to allow the `nuxt` server to wait on them.
+> Nota: As ações assíncronas do `nuxtServerInit` devem retornar uma promessa (promise) para permitir que o servidor do` nuxt` os aguarde.

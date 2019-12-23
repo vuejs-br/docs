@@ -1,74 +1,74 @@
 [
   {
-    "title": "Prologue",
+    "title": "Prólogo",
     "links": [
       {
-        "to": "", "name": "Introduction",
+        "to": "", "name": "Introdução",
         "contents": [
-          { "to": "#what-is-nuxt-js-", "name": "What is Nuxt.js ?" },
-          { "to": "#how-it-works", "name": "How it Works" },
-          { "to": "#features", "name": "Features" },
-          { "to": "#schema", "name": "Schema" },
-          { "to": "#server-rendered-universal-ssr-", "name": "Server Rendered" },
+          { "to": "#what-is-nuxt-js-", "name": "O que é  Nuxt.js ?" },
+          { "to": "#how-it-works", "name": "Como funciona" },
+          { "to": "#features", "name": "Recursos" },
+          { "to": "#schema", "name": "Esquema" },
+          { "to": "#server-rendered-universal-ssr-", "name": "Servidor renderizado" },
           { "to": "#single-page-applications-spa-", "name": "Single Page Application" },
-          { "to": "#static-generated-pre-rendering-", "name": "Static Generated" }
+          { "to": "#static-generated-pre-rendering-", "name": "Estática gerada" }
         ]
       },
-      { "to": "/contribution-guide", "name": "Contribution Guide" },
-      { "to": "/release-notes", "name": "Release Notes" }
+      { "to": "/contribution-guide", "name": "Guia de Contribuição" },
+      { "to": "/release-notes", "name": "Notas de versão" }
     ]
   },
   {
-    "title": "Getting Started",
+    "title": "Começando",
     "links": [
       {
-        "to": "/installation", "name": "Installation",
+        "to": "/installation", "name": "Instalação",
         "contents": [
-          { "to": "#using-nuxt-js-starter-template", "name": "Using Nuxt.js starter template" },
-          { "to": "#starting-from-scratch", "name": "Starting from scratch" }
+          { "to": "#using-nuxt-js-starter-template", "name": "Usando o template inicial do Nuxt.js. " },
+          { "to": "#starting-from-scratch", "name": "Começando do zero" }
         ]
       },
       {
-        "to": "/directory-structure", "name": "Directory Structure",
+        "to": "/directory-structure", "name": "Estrutura de diretório",
         "contents": [
-          { "to": "#directories", "name": "Directories" },
+          { "to": "#directories", "name": "Diretórios " },
           { "to": "#aliases", "name": "Aliases" }
         ]
       },
-      { "to": "/configuration", "name": "Configuration" },
+      { "to": "/configuration", "name": "Configuração" },
       {
         "to": "/routing", "name": "Routing",
         "contents": [
-          { "to": "#basic-routes", "name": "Basic Routes" },
-          { "to": "#dynamic-routes", "name": "Dynamic Routes" },
-          { "to": "#nested-routes", "name": "Nested Routes" },
-          { "to": "#dynamic-nested-routes", "name": "Dynamic Nested Routes" },
-          { "to": "#transitions", "name": "Transitions" },
+          { "to": "#basic-routes", "name": "Rotas básicas" },
+          { "to": "#dynamic-routes", "name": "Rotas dinâmicas" },
+          { "to": "#nested-routes", "name": "Rotas aninhadas" },
+          { "to": "#dynamic-nested-routes", "name": "Rotas dinâmicas aninhadas" },
+          { "to": "#transitions", "name": "Transições" },
           { "to": "#middleware", "name": "Middleware" }
         ]
       },
       {
         "to": "/views", "name": "Views",
         "contents": [
-          { "to": "#document", "name": "Document" },
+          { "to": "#document", "name": "Documentos" },
           { "to": "#layouts", "name": "Layouts" },
-          { "to": "#pages", "name": "Pages" },
+          { "to": "#pages", "name": "Paginas" },
           { "to": "#html-head", "name": "HTML Head" }
         ]
       },
       {
         "to": "/async-data", "name": "Async Data",
         "contents": [
-          { "to": "#the-data-method", "name": "The asyncData Method" },
+          { "to": "#the-data-method", "name": "O método Async Data" },
           { "to": "#the-context", "name": "The Context" },
-          { "to": "#handling-errors", "name": "Handling Errors" }
+          { "to": "#handling-errors", "name": "Tratamento de erros" }
         ]
       },
       {
         "to": "/assets", "name": "Assets",
         "contents": [
           { "to": "#webpacked", "name": "Webpacked" },
-          { "to": "#static", "name": "Static" }
+          { "to": "#static", "name": "Estático" }
         ]
       },
       {
@@ -102,15 +102,15 @@
       {
         "to": "/commands", "name": "Commands and Deployment",
         "contents": [
-          { "to": "#list-of-commands", "name": "List of Commands" },
-          { "to": "#development-environment", "name": "Development Enviroment" },
-          { "to": "#production-deployment", "name": "Production Deployment" }
+          { "to": "#list-of-commands", "name": "Lista de comandos" },
+          { "to": "#development-environment", "name": "Ambiente de Desenvolvimento" },
+          { "to": "#production-deployment", "name": "Implantação de produção" }
         ]
       },
       {
-        "to": "/development-tools", "name": "Development Tools",
+        "to": "/development-tools", "name": "Ferramentas de desenvolvimento",
         "contents": [
-          { "to": "#end-to-end-testing", "name": "End-to-End Testing" },
+          { "to": "#end-to-end-testing", "name": "Teste de ponta-a-ponta" },
           { "to": "#eslint", "name": "ESLint" }
         ]
       }

@@ -1,13 +1,13 @@
 ---
 title: Routing
-description: Nuxt.js use the file-system to generate the routes of your web applications.
+description: O Nuxt.js usa o sistema de arquivos para gerar as rotas de suas aplicações web.
 ---
 
-> Nuxt.js automatically generates the [vue-router](https://github.com/vuejs/vue-router) configuration based on your file tree of Vue files inside the `pages` directory.
+> O Nuxt.js gera automaticamente a configuração [vue-router](https://github.com/vuejs/vue-router) com base na sua árvore de arquivos do Vue dentro do diretório `pages`.
 
-## Basic Routes
+## Rotas básicas
 
-This file tree:
+Esta árvore de arquivos:
 
 ```bash
 pages/
@@ -17,7 +17,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+irá gerar automaticamente:
 
 ```js
 router: {
@@ -41,11 +41,11 @@ router: {
 }
 ```
 
-## Dynamic Routes
+## Rotas dinâmicas
 
-To define a dynamic route with a param, you need to define a .vue file OR a directory **prefixed by an underscore**.
+Para definir uma rota dinâmica com um parâmetro, você precisa definir um arquivo .vue OU um diretório **prefixado por uma underline**.
 
-This file tree:
+Esta árvore de arquivos:
 
 ```bash
 pages/
@@ -57,7 +57,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+irá gerar automaticamente:
 
 ```js
 router: {
@@ -86,19 +86,19 @@ router: {
 }
 ```
 
-As you can see the route named `users-id` has the path `:id?` which makes it optional, if you want to make it required, create an `index.vue` file in the `users/_id` directory.
+Como você pode ver, a rota chamada `users-id` possui o caminho`: id? `, O que o torna opcional, se você desejar, crie um arquivo` index.vue` no diretório `users / _id`.
 
 <div class="Alert Alert--orange">
 
-<b>Warning:</b> dynamic routes are ignored by the `generate` command: [API Configuration generate](/api/configuration-generate#routes)
+<b> Aviso: </b> rotas dinâmicas são ignoradas pelo comando `generate`: [API Configuration generate](/api/configuration-generate # routes)
 
 </div>
 
-### Validate Route Params
+### Validar parâmetros de rota
 
-Nuxt.js lets you define a validator method inside your dynamic route component.
+O Nuxt.js permite definir um método validador dentro do seu componente de rota dinâmica.
 
-In this example: `pages/users/_id.vue`
+Neste exemplo: `pages/users/_id.vue`
 
 ```js
 export default {
@@ -109,23 +109,23 @@ export default {
 }
 ```
 
-If the validate method does not return `true`, Nuxt.js will automatically load the 404 error page.
+Se o método validate não retornar `true`, o Nuxt.js carregará automaticamente a página de erro 404.
 
-More information about the validate method: [API Pages validate](/api/pages-validate)
+Mais informações sobre o método validate: [API Pages validate](/api/pages-validate)
 
-## Nested Routes
+## Rotas aninhadas
 
-Nuxt.js lets you create nested route by using the children routes of vue-router.
+O Nuxt.js permite criar rotas aninhadas usando as rotas secundárias do vue-router.
 
-To define the parent component of a nested route, you need to create a Vue file with the **same name as the directory** which contain your children views.
+Para definir o componente pai de uma rota aninhada, você precisa criar um arquivo Vue com o **mesmo nome que o diretório**, que contém as visualizações de seus filhos.
 
 <div class="Alert Alert--orange">
 
-<b>Warning:</b> don't forget to write `<nuxt-child/>` inside the parent component (<code>.vue</code> file).
+<b> Aviso: </b> não esqueça de escrever `<nuxt-child />` dentro do componente pai (arquivo <code> .vue </code>).
 
 </div>
 
-This file tree:
+Esta árvore de arquivos:
 
 ```bash
 pages/
@@ -135,7 +135,7 @@ pages/
 --| users.vue
 ```
 
-will automatically generate:
+irá gerar automaticamente:
 
 ```js
 router: {
@@ -160,11 +160,11 @@ router: {
 }
 ```
 
-## Dynamic Nested Routes
+## Rotas aninhadas dinâmicas
 
-This scenario should not often happen, but it is possible with Nuxt.js: having dynamic children inside dynamic parents.
+Esse cenário não costuma acontecer, mas é possível com o Nuxt.js: ter filhos dinâmicos dentro de pais dinâmicos.
 
-This file tree:
+Esta árvore de arquivos:
 
 ```bash
 pages/
@@ -178,7 +178,7 @@ pages/
 --| index.vue
 ```
 
-will automatically generate:
+irá gerar automaticamente:
 
 ```js
 router: {
@@ -219,21 +219,21 @@ router: {
 }
 ```
 
-## Transitions
+## Transições
 
-Nuxt.js uses the [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) component to let you create amazing transitions/animations between your routes.
+O Nuxt.js usa o componente [`<transition>`](http://vuejs.org/v2/guide/transitions.html#Transitioning-Single-Elements-Components) para permitir que você crie transições/animações incríveis entre suas rotas.
 
-### Global Settings
+### Configurações globais
 
 <div class="Alert Alert--nuxt-green">
 
-<b>Info :</b> Nuxt.js default transition name is `"page"`.
+<b>Info :</b> O nome da transição padrão do Nuxt.js é `"page"`.
 
 </div>
 
-To add a fade transition to every page of your application, we need a CSS file that is shared across all our routes, so we start by creating a file in the `assets` folder.
+Para adicionar uma transição fade a todas as páginas do seu aplicativo, precisamos de um arquivo CSS que seja compartilhado em todas as nossas rotas, então começamos criando um arquivo na pasta `assets`.
 
-Our global css in `assets/main.css`:
+Nosso css global em `assets/main.css`:
 
 ```css
 .page-enter-active, .page-leave-active {
@@ -244,7 +244,7 @@ Our global css in `assets/main.css`:
 }
 ```
 
-We add its path in our `nuxt.config.js` file:
+Nós adicionamos seu caminho no nosso arquivo `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -254,13 +254,13 @@ module.exports = {
 }
 ```
 
-More information about the transition key: [API Configuration transition](/api/pages-transition)
+Mais informações sobre a chave de transição: [Transição de configuração da API](/api/pages-transição)
 
-### Page Settings
+### Configurações da página
 
-You can also define a custom transition for only one page with the `transition` property.
+Você também pode definir uma transição personalizada para apenas uma página com a propriedade `transition`.
 
-We add a new class in our global css in `assets/main.css`:
+Adicionamos uma nova classe em nosso css global em `assets/main.css`:
 
 ```css
 .test-enter-active, .test-leave-active {
@@ -271,7 +271,7 @@ We add a new class in our global css in `assets/main.css`:
 }
 ```
 
-then, we use the transition property to define the class name to use for this page transition:
+então, usamos a propriedade de transição para definir o nome da classe a ser usada para esta transição de página:
 
 ```js
 export default {
@@ -279,15 +279,15 @@ export default {
 }
 ```
 
-More information about the transition property: [API Pages transition](/api/pages-transition)
+Mais informações sobre a propriedade de transição: [Transição de páginas da API](/api/pages-transição)
 
 ## Middleware
 
-> Middleware lets you define custom functions that can be run before rendering either a page or a group of pages.
+> O middleware permite definir funções personalizadas que podem ser executadas antes da renderização de uma página ou de um grupo de páginas.
 
-**Every middleware should be placed in the `middleware/` directory.** The filename will be the name of the middleware (`middleware/auth.js` will be the `auth` middleware).
+**Todo middleware deve ser colocado no diretório `middleware /`.** O nome do arquivo será o nome do middleware (`middleware / auth.js` será o `auth`).
 
-A middleware receives [the context](/api/context) as first argument:
+Um middleware recebe [o context](/api/context) como primeiro argumento:
 
 ```js
 export default function (context) {
@@ -295,13 +295,13 @@ export default function (context) {
 }
 ```
 
-The middleware will be executed in series in this order:
+O middleware será executado em série nesta ordem:
 
 1. `nuxt.config.js`
-2. Matched layouts
-3. Matched pages
+2. Layouts correspondentes
+3. Páginas correspondentes
 
-A middleware can be asynchronous. To do this, simply return a `Promise` or use the 2nd `callback` argument:
+Um middleware pode ser assíncrono. Para fazer isso, basta retornar uma promessa ou usar o segundo argumento de `callback`:
 
 `middleware/stats.js`
 
@@ -315,7 +315,7 @@ export default function ({ route }) {
 }
 ```
 
-Then, in your `nuxt.config.js`, layout or page, use the `middleware` key:
+Então, no seu layout ou página `nuxt.config.js`, use a chave` middleware`:
 
 `nuxt.config.js`
 
@@ -327,6 +327,6 @@ module.exports = {
 }
 ```
 
-The `stats` middleware will be called for every route changes.
+O middleware `stats` será chamado para todas as mudanças de rota.
 
-To see a real-life example using the middleware, please see [example-auth0](https://github.com/nuxt/example-auth0) on GitHub.
+Para ver um exemplo real usando o middleware, consulte [example-auth0](https://github.com/nuxt/example-auth0) no GitHub.

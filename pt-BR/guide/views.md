@@ -1,19 +1,19 @@
 ---
 title: Views
-description: The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
+description: A seção Views descreve tudo o que você precisa para configurar dados e exibições para uma rota específica no seu aplicativo Nuxt.js (documento, layouts, páginas e cabeçalho HTML).
 ---
 
-> The Views section describes all you need to configure data and views for a specific route in your Nuxt.js Application (Document, Layouts, Pages and HTML Head).
+> A seção Views descreve tudo o que você precisa para configurar dados e exibições para uma rota específica no seu aplicativo Nuxt.js (documento, layouts, páginas e cabeçalho HTML).
 
 ![nuxt-views-schema](/nuxt-views-schema.svg)
 
-## Document
+## Documento
 
-> You can customise the main document with Nuxt.js.
+> Você pode personalizar o documento principal com o Nuxt.js.
 
-To extend the HTML template, create a `app.html` at the root of your project.
+Para estender o modelo HTML, crie um `app.html` na raiz do seu projeto.
 
-The default template is:
+O modelo padrão é:
 
 ```html
 <!DOCTYPE html>
@@ -27,7 +27,7 @@ The default template is:
 </html>
 ```
 
-One example if to add conditional CSS classes for IE:
+Um exemplo se adicionar classes CSS condicionais para o IE:
 
 ```html
 <!DOCTYPE html>
@@ -44,15 +44,15 @@ One example if to add conditional CSS classes for IE:
 
 ## Layouts
 
-Nuxt.js lets you extend the main layout or create custom layouts by adding them in the `layouts` directory.
+O Nuxt.js permite estender o layout principal ou criar layouts personalizados, adicionando-os no diretório `layouts`.
 
-### Default Layout
+### Layout padrão
 
-You can extend the main layout by adding a `layouts/default.vue` file.
+Você pode estender o layout principal adicionando um arquivo `layouts/default.vue`.
 
-*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
+*Certifique-se de adicionar o componente `<nuxt />` ao criar um layout para exibir o componente da página.*
 
-The default layout source code is:
+O código-fonte do layout padrão é:
 
 ```html
 <template>
@@ -60,15 +60,15 @@ The default layout source code is:
 </template>
 ```
 
-### Error Page
+### Página de erro
 
-You can customize the error page by adding a `layouts/error.vue` file.
+Você pode personalizar a página de erro adicionando um arquivo `layouts/error.vue`.
 
-This layout is special since you should not include `<nuxt/>` inside its template. You must see this layout as a component displayed when an error occurs (404, 500, etc).
+Esse layout é especial, pois você não deve incluir `<nuxt/>` dentro de seu template. Você deve ver esse layout como um componente exibido quando ocorrer um erro (404, 500, etc).
 
-The default error page source code is [available on GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
+O código-fonte da página de erro padrão está [disponível no GitHub](https://github.com/nuxt/nuxt.js/blob/dev/packages/vue-app/template/components/nuxt-error.vue).
 
-Example of a custom error page in `layouts/error.vue`:
+Exemplo de uma página de erro personalizada em `layouts/error.vue`:
 
 ```html
 <template>
@@ -87,23 +87,23 @@ export default {
 </script>
 ```
 
-### Custom Layout
+### Layout personalizado
 
-Every file (*first level*) in the `layouts` directory will create a custom layout accessible with the `layout` property in the page component.
+Todo arquivo (*primeiro nível*) no diretório `layouts` criará um layout personalizado acessível com a propriedade` layout` no componente da página.
 
-*Make sure to add the `<nuxt/>` component when creating a layout to display the page component.*
+*Certifique-se de adicionar o componente `<nuxt/>` ao criar um layout para exibir o componente da página.*
 
-Example of `layouts/blog.vue`:
+Exemplo de `layouts/blog.vue`:
 ```html
 <template>
   <div>
-    <div>My blog navigation bar here</div>
+    <div>Minha barra de navegação está aqui.</div>
     <nuxt/>
   </div>
 </template>
 ```
 
-And then in `pages/posts.vue`, you can tell Nuxt.js to use your custom layout:
+E então, em `pages / posts.vue`, você pode dizer ao Nuxt.js para usar seu layout personalizado:
 
 ```html
 <script>
@@ -113,14 +113,13 @@ export default {
 </script>
 ```
 
-More information about the `layout` property: [API Pages `layout`](/api/pages-layout)
+Mais informações sobre a propriedade `layout`: [Páginas da API` layout`](/api/pages-layout)
 
-Check the [demonstration video](https://www.youtube.com/watch?v=YOKnSTp7d38) to see it in action.
+Confira o [vídeo de demonstração](https://www.youtube.com/watch?v=YOKnSTp7d38) para ver em ação.
 
-## Pages
+## Páginas
 
-Every Page component is a Vue component, but Nuxt.js adds special keys to make the development of your universal application the easiest way possible.
-
+Cada componente da página é um componente do Vue, mas o Nuxt.js adiciona chaves especiais para tornar o desenvolvimento do seu aplicativo universal da maneira mais fácil possível.
 ```html
 <template>
   <h1 class="red">Hello {{ name }}!</h1>
@@ -150,24 +149,24 @@ export default {
 </style>
 ```
 
-| Attribute | Description |
+| Atributo | Descrição |
 |-----------|-------------|
-| asyncData | The most important key, it can be asynchronous and receives the context as argument, please read the [async data documentation](/guide/async-data) to learn how it works. |
-| fetch | Used to fill the store before rendering the page, it's like the data method except it doesn't set the component data. See the [API Pages `fetch` documentation](/api/pages-fetch). |
-| head | Set specific Meta Tags for the current page, see [API Pages `head` documentation](/api/pages-head). |
-| layout | Specify a layout defined in the `layouts` directory, see [API Pages `layout` documentation](/api/pages-layout). |
-| transition | Set a specific transition for the page, see [API Pages `transition`](/api/pages-transition). |
-| scrollToTop | Boolean, by default: `false`. Specify if you want the page to scroll to the top before rendering the page, it's used for [nested routes](/guide/routing#nested-routes). |
-| validate | Validator function for [dynamic routes](/guide/routing#dynamic-routes). |
-| middleware | Set a middleware for this page, the middleware will be called before rendering the page, see routes [middleware](/guide/routing#middleware). |
+| asyncData | A chava mais importante, ela pode ser assíncrona e receber o context como argumento, Por favor, leia [documentação dos dados assíncronos](/guide/async-data) para aprender como funciona. |
+| fetch | Usado para preencher a loja antes de renderizar a página, é como método de dados exceto que não define os dados do componente. Veja [Documentação `fetch` das páginas da API](/api/pages-fetch). | 
+| head | Define meta tags específicos para a página atual, consulte [Documentação `head` das Páginas da API](/api/pages-head). |
+| layout | Especifica um layout definido no diretório `layouts`, veja [Documentação do `layout` das páginas da API](/api/pages-layout).|
+| transition | Define uma transição específica para a página, consulte[Páginas de API `transition`](/api/pages-transition). |
+| scrollToTop | Boolean, por padrão: `false`. Especifica se você deseja que a página role para o topo antes de renderizá-la, ela é usada para [rotas aninhadas](/guide/routing#nested-routes). |
+| validate | Função Validator para [rotas dinâmicas](/guide/routing#dynamic-routes). |
+| middleware | Defina um middleware para esta página, o middleware será chamado antes de renderizar a página, consulte as rotas [middleware](/guide/routing#middleware). |
 
-More information about the pages properties usage: [API Pages](/api)
+Mais informações sobre o uso das propriedades das páginas: [Páginas da API](/api)
 
 ## HTML Head
 
-Nuxt.js uses [vue-meta](https://github.com/nuxt/vue-meta) to update the `headers` and `html attributes` of your application.
+O Nuxt.js usa o [vue-meta](https://github.com/nuxt/vue-meta) para atualizar os `headers` e` html attribute` da sua aplicação.
 
-Nuxt.js configures `vue-meta` with these options:
+O Nuxt.js configura o `vue-meta` com estas opções:
 ```js
 {
   keyName: 'head', // the component option name that vue-meta looks for meta info on.
@@ -177,11 +176,11 @@ Nuxt.js configures `vue-meta` with these options:
 }
 ```
 
-### Default Meta Tags
+### Meta Tags padrão
 
-Nuxt.js let you define all default meta for your application inside `nuxt.config.js`, use the same `head` property:
+O Nuxt.js permite definir toda a meta padrão para sua aplicação dentro do `nuxt.config.js`, use a mesma propriedade` head`:
 
-Example of a custom viewport with a custom Google font:
+Exemplo de uma viewport personalizada com uma fonte personalizada do Google:
 
 ```js
 head: {
@@ -195,16 +194,16 @@ head: {
 }
 ```
 
-To know the list of options you can give to `head`, take a look at [vue-meta documentation](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
+Para conhecer a lista de opções que você pode dar ao `head`, dê uma olhada em [documentação vue-meta](https://vue-meta.nuxtjs.org/api/#metainfo-properties).
 
-More information about the `head` method: [API Configuration `head`](/api/configuration-head).
+Mais informações sobre o método `head`: [Configuração da API` head`](/api/configuration-head).
 
-### Custom Meta Tags for a Page
+### Meta Tags personalizadas para uma página
 
-More information about the head method: [API Pages `head`](/api/pages-head).
+Mais informações sobre o método head: [Páginas da API `head`](/api/pages-head).
 
 <div class="Alert">
 
-To avoid any duplication when used in child component, please give a unique identifier with the `hid` key, please [read more about it](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
+Para evitar duplicação quando usado no componente filho, forneça um identificador exclusivo com a chave `hid`, por favor [leia mais sobre isso](https://vue-meta.nuxtjs.org/api/#tagidkeyname).
 
 </div>

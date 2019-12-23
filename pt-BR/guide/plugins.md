@@ -54,7 +54,7 @@ Então, podemos importar `axios` em qualquer lugar sem ter que se preocupar em a
 
 ## Vue Plugins
 
-Se quisermos usar [vue-Notifications](https://github.com/se-panfilov/vue-notifications) para exibir notificações em nosso aplicativo, precisamos configurar o plugin antes de iniciar o aplicação.
+Se quisermos usar [vue-Notifications](https://github.com/se-panfilov/vue-notifications) para exibir notificações em nosso aplicativo, precisamos configurar o plugin antes de iniciar a aplicação.
 Arquivo `plugins/vue-notifications.js`:
 
 ```js
@@ -64,7 +64,8 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-Then, we add the file inside the `plugins` key of `nuxt.config.js`:
+Em seguida, adicionamos o arquivo dentro da chave `plugins` do
+ `nuxt.config.js`:
 
 ```js
 module.exports = {
@@ -72,11 +73,11 @@ module.exports = {
 }
 ```
 
-To learn more about the `plugins` configuration key, check out the [plugins api](/api/configuration-plugins).
+Para aprender mais sobre a chave de configuração `plugins`, consulte os [plugins api](/api/configuration-plugins).
 
-Actually, `vue-notifications` will be included in the app bundle, but because it's a library, we want to include it in the vendor bundle for better caching.
+Na verdade, `vue-Notifications` será incluído no pacote de aplicações, mas como é uma biblioteca, queremos incluí-lo no pacote de fornecedores para melhorar o armazenamento em cache.
 
-We can update our `nuxt.config.js` to add `vue-notifications` in the vendor bundle:
+Podemos atualizar nosso `nuxt.config.js` para adicionar` vue-Notifications` no pacote do fornecedor:
 
 ```js
 module.exports = {
@@ -87,9 +88,9 @@ module.exports = {
 }
 ```
 
-## Inject in $root & context
+## Injetar em $root & context
 
-Some plugins need to be injected in the App root to be used, like [vue-18n](https://github.com/kazupon/vue-i18n). With Nuxt.js, you can use `app` available into the `context` when exporting a method:
+Alguns plugins precisam ser injetados na raiz da aplicação a ser usada, como [vue-18n](https://github.com/kazupon/vue-i18n). Com o Nuxt.js, você pode usar o `app` disponível no` context` ao exportar um método:
 
 `plugins/i18n.js`:
 
@@ -119,13 +120,13 @@ module.exports = {
 }
 ```
 
-Please take a look at the [i18n example](/examples/i18n) to see how we use it.
+Por favor, dê uma olhada no [exemplo do i18n](/examples/i18n) para ver como o usamos.
 
-## Client-side only
+## Somente do lado do cliente (client-side)
 
-Some plugins might work **only for the browser**, you can use the `ssr: false` option in `plugins` to run the file only on the client-side.
+Alguns plugins podem funcionar **apenas para o navegador**, você pode usar a opção `ssr: false` em` plugins` para executar o arquivo apenas no lado do cliente.
 
-Example:
+Exemplo:
 
 `nuxt.config.js`:
 
@@ -146,6 +147,6 @@ import VueNotifications from 'vue-notifications'
 Vue.use(VueNotifications)
 ```
 
-In case you need to require some libraries only for the server, you can use the `process.server` variable set to `true` when webpack is creating the `server.bundle.js` file.
+Caso você precise exigir algumas bibliotecas apenas para o servidor, você pode usar a variável `process.server` definida como` true` quando o webpack estiver criando o arquivo `server.bundle.js`.
 
-Also, if you need to know if you are inside a generated app (via `nuxt generate`), you can check `process.static`, set to `true` during generation and after. To know the state when a page is being server-rendered by `nuxt generate` before being saved, you can use `process.static && process.server`.
+Além disso, se você precisa saber se está dentro de uma aplicação gerada (via `nuxt generate`), verifique` process.static`, definido como `true` durante a geração e depois. Para saber o estado em que uma página está sendo renderizada no servidor pelo `nuxt generate` antes de ser salva, você pode usar o` process.static && process.server`.
