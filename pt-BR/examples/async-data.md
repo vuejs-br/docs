@@ -1,6 +1,6 @@
 ---
 title: Async Data
-description: Async Data example with Nuxt.js
+description: Exemplo de Async Data com o Nuxt.js
 github: async-data
 documentation: /guide/async-data
 ---

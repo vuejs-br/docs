@@ -1,6 +1,6 @@
 ---
 title: Vuex Store
-description: Vuex Store example with Nuxt.js
+description: Exemplo de Vuex Store com o Vuex.js
 github: vuex-store
 livedemo: https://vuex-store.nuxtjs.org
 documentation: /guide/vuex-store
